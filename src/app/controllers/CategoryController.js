@@ -1,6 +1,6 @@
 const CategoriesRepository = require('../repositories/CategoriesRepository');
 
-class CategoryController{
+class CategoryController {
   async index(request, response) {
     const categories = await CategoriesRepository.findAll();
 
@@ -11,36 +11,35 @@ class CategoryController{
     const { id } = request.params;
     const category = await CategoriesRepository.findById(id);
 
-    if(!category) {
-      return response.status(404).json({ error: "Categorie not found" });
+    if (!category) {
+      return response.status(404).json({ error: 'Categorie not found' });
     }
     response.json(category);
-
   }
 
   async store(request, response) {
     const { name } = request.body;
 
     if (!name) {
-      return response.status(400).json({ error: "Name is required" });
+      return response.status(400).json({ error: 'Name is required' });
     }
 
-    const category = await CategoriesRepository.create( { name });
+    const category = await CategoriesRepository.create({ name });
 
     response.json(category);
   }
 
   async update(request, response) {
     const { id } = request.params;
-    const{ name } = request.body;
+    const { name } = request.body;
 
     const categoryExists = await CategoriesRepository.findById(id);
-    if(!categoryExists) {
-      return response.status(404).json({error: 'Category not found'});
+    if (!categoryExists) {
+      return response.status(404).json({ error: 'Category not found' });
     }
 
     if (!name) {
-      return response.status(404).json({error: 'Name is required'});
+      return response.status(404).json({ error: 'Name is required' });
     }
     const category = await CategoriesRepository.update(id, {
       name,
@@ -48,11 +47,10 @@ class CategoryController{
     response.json(category);
   }
 
-  async delete(request, response){
-    const { id }= request.params;
+  async delete(request, response) {
+    const { id } = request.params;
     await CategoriesRepository.delete(id);
     response.sendStatus(204);
-
   }
 }
 module.exports = new CategoryController();
