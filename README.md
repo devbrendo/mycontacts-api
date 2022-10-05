@@ -9,7 +9,7 @@ As seguintes tecnologias foram utilizadas no desenvolvimento dessa aplicação:
 
 - [NodeJS](https://nodejs.dev/)
 - [Express](https://expressjs.com/en/api.html)
-- [PostegreSQL] (https://www.postgresql.org/docs/)
+- [PostegreSQL](https://www.postgresql.org/docs/)
 
 ## ⬇️ Como baixar e executar a aplicação
 
