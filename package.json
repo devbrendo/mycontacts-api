@@ -1,24 +1,21 @@
 {
-  "packageManager": "yarn@3.1.1",
-  "name": "back-end",
+  "name": "mycontacts",
   "version": "1.0.0",
   "description": "API to store contacts",
   "main": "src/index.js",
-  "author": "Giovane Saes",
+  "author": "Brendo Gaigher",
   "license": "MIT",
   "scripts": {
-    "dev": "PORT=3001 nodemon src/index.js"
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "express": "^4.18.1",
-    "express-async-errors": "^3.1.1",
-    "pg": "^8.7.3",
-    "uuid": "^8.3.2"
+    "pg": "^8.8.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint": "^8.24.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "nodemon": "^2.0.16"
+    "eslint-plugin-import": "^2.26.0",
+    "nodemon": "^2.0.20"
   }
 }
